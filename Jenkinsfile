@@ -15,7 +15,7 @@ pipeline {
         stage('Checkout') {
             steps {
                 // Checkout your code from the repository
-                git 'https://github.com/yourusername/yourrepository.git'  // Replace with your repo URL
+                git 'https://github.com/ArchiChaudhari/django.git'  // Replace with your repo URL
             }
         }
 
