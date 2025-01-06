@@ -6,7 +6,7 @@ pipeline {
         DOCKER_IMAGE = 'django-docker'
         DOCKER_TAG = 'latest'
         DOCKER_REGISTRY = 'docker.io'
-        DOCKER_REPO = 'yourusername'  // Replace with your Docker Hub username or registry
+        DOCKER_REPO = 'archichaudhari'  // Replace with your Docker Hub username or registry
         CONTAINER_NAME = 'django-container'
         DOCKERFILE_PATH = '.'  // Path to Dockerfile (if it's in the root, otherwise adjust)
     }
@@ -45,9 +45,9 @@ pipeline {
             steps {
                 script {
                     // Log in to Docker Hub (you need to set up credentials in Jenkins)
-                    withCredentials([usernamePassword(credentialsId: 'docker-hub-credential', usernameVariable: 'archichaudhari'
+                    withCredentials([usernamePassword(credentialsId: 'docker-hub-credential', usernameVariable: 'DOCKER_USERNAME'
 
-, passwordVariable: '9561289589@aA')]) {
+, passwordVariable: 'DOCKER_PASSWORD')]) {
                         sh 'echo $DOCKER_PASSWORD | docker login --username $DOCKER_USERNAME --password-stdin'
                     }
 
